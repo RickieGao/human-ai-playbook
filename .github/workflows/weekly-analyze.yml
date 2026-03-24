@@ -1,0 +1,27 @@
+name: Weekly Analysis
+
+on:
+  schedule:
+    - cron: '0 12 * * 2'  # Every Tuesday at 12:00 UTC (after collection)
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run analysis
+        run: |
+          echo "TODO: Implement analysis pipeline"
+          echo "This workflow will analyze the latest digest against current methodology"
+          # Future: invoke Claude API with evolution/analyzer/analyze-prompt.md
+
+      - name: Generate update proposals
+        run: |
+          echo "TODO: Generate update proposals"
+          # Future: invoke Claude API with evolution/updater/update-prompt.md
+
+      - name: Create update PR
+        run: |
+          echo "TODO: Create PR with update proposals for human review"

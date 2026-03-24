@@ -1,0 +1,48 @@
+# Search Configuration for Weekly Collection
+# Used by the collector to find new sources and updates
+
+sources:
+  # Official blogs and docs
+  official:
+    - name: Anthropic Engineering Blog
+      url: https://www.anthropic.com/engineering
+      frequency: weekly
+    - name: Anthropic Resources
+      url: https://resources.anthropic.com
+      frequency: weekly
+
+  # Community
+  github:
+    - query: "CLAUDE.md best practices"
+      sort: updated
+      frequency: weekly
+    - query: "agentic coding workflow"
+      sort: stars
+      frequency: monthly
+
+  social:
+    - platform: twitter
+      accounts:
+        - bcherny
+        - adocomplete
+      hashtags:
+        - ClaudeCode
+        - AgenticCoding
+      frequency: weekly
+
+    - platform: reddit
+      subreddits:
+        - ClaudeAI
+        - ClaudeCode
+      frequency: weekly
+
+  # Academic
+  academic:
+    - platform: arxiv
+      query: "LLM software engineering agent"
+      frequency: monthly
+
+# Filtering
+relevance_threshold: 0.7
+max_items_per_source: 10
+dedup_window_days: 30

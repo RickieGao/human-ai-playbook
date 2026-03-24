@@ -1,0 +1,23 @@
+name: Weekly Collection
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9:00 UTC
+  workflow_dispatch:       # Manual trigger
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run collection
+        run: |
+          echo "TODO: Implement collection pipeline"
+          echo "This workflow will search configured sources and produce a weekly digest"
+          # Future: invoke Claude API with evolution/collector/collect-prompt.md
+
+      - name: Create digest PR
+        run: |
+          echo "TODO: Create PR with new digest file"
+          # Future: create PR with the new digest for human review
