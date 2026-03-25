@@ -10,6 +10,11 @@
 - For large tasks, split into multiple sessions with clear handoff
 - End each session with a commit and progress summary
 
+### Project Documentation
+- Project-specific process documents (test logs, TODOs, decision records, progress notes) should live in the repository, not in AI memory
+- AI memory is reserved for cross-project user preferences only
+- This keeps context clean when switching between projects
+
 ### Known Pitfalls
 {{known_pitfalls}}
 
