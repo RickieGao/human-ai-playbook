@@ -28,12 +28,16 @@
 | 读者 | 只给人看 | 双向：人看方法论，AI 看协议 |
 | 场景覆盖 | 仅编程 | 方法论通用，MVP 聚焦工程编程 |
 | 更新机制 | 人工手动 | 自我进化（AI 采集 -> 提炼 -> 建议 -> 人审核） |
-| 产出物 | 参考阅读 | 可执行（Agent 生成 CLAUDE.md + 项目结构） |
+| 产出物 | 参考阅读 | 可执行（`/kickoff` 一键启动，从想法到方案） |
 
 ## 快速开始
 
 1. **了解方法论**: 从 [`docs/zh/00-overview.md`](docs/zh/00-overview.md) 开始
-2. **使用立项 Agent**: 运行 [立项 Agent](agents/kickoff/SKILL.md) 为你的项目生成 CLAUDE.md
+2. **使用立项 Agent**: 在 Claude Code 中输入 `/kickoff` 启动立项流程
+   - 有现有项目？自动扫描你的代码库，检测技术栈和配置
+   - 只有一个想法？引导你澄清需求、调研现有方案、选择技术路线
+   - 最终生成一份量身定制的 CLAUDE.md
+   - 安装：将 [`.claude/commands/kickoff.md`](.claude/commands/kickoff.md) 复制到 `~/.claude/commands/` 即可全局使用
 3. **遵循工作流**: Need -> Plan -> Execute -> Verify -> Document
 
 ## 项目结构
