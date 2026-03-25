@@ -8,6 +8,17 @@ Users answer based on intuition, not abstract concepts.
 - Path A: After project scan confirmation
 - Path B: After tech recommendation confirmation
 
+## Update Mode (existing CLAUDE.md with collaboration preferences)
+
+If the existing CLAUDE.md already contains clear collaboration preferences (workflow, scope handling, communication style, etc.), skip the full questionnaire. Instead:
+
+1. Extract and summarize the existing preferences from CLAUDE.md
+2. Present them to the user: "Your current collaboration preferences are: [summary]. Still accurate?"
+3. If confirmed → skip directly to CLAUDE.md generation/review (Stage 3-4)
+4. If user wants changes → ask only about the specific areas they want to adjust, not the full questionnaire
+
+This avoids redundant questions when the user has already established their preferences.
+
 ## Language Adaptation
 
 Detect the user's language from their prior messages in the conversation. Present all questions, options, and summaries in that language. The questions below are written in English as the protocol source; translate naturally (not literally) when presenting to non-English users.
