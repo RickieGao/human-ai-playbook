@@ -93,5 +93,29 @@ Then offer optional scaffold:
 > "Would you like me to initialize the project? (Create directory structure,
 > install dependencies, set up toolchain)"
 
-- If yes: proceed with scaffolding based on tech summary
+- If yes: proceed with scaffolding based on project type and tech summary
 - If no: flow ends
+
+## Scaffold Guidelines by Project Type
+
+### All projects
+- Initialize git repository
+- Create `.gitignore` tailored to the tech stack
+- Create directory structure as defined in CLAUDE.md
+
+### Application projects
+- Initialize package manager (`uv init`, `npm init`, etc.)
+- Set up linter/formatter config
+- Add a minimal test scaffold
+
+### Documentation projects
+- Create doc templates in target directories
+
+### Research / Data projects
+- `.gitignore` must explicitly block data files (`.csv`, `.xlsx`, `.pkl`, `.parquet`, etc.) to prevent accidental data leaks
+- If a reference prompt/doc exists, offer to reorganize it into the project structure (e.g., `docs/research-context.md`)
+- Create placeholder directories for outputs (`papers/`, `references/`, `logs/`, etc.)
+
+### Docs + Automation projects
+- Create workflow scaffolds with `workflow_dispatch` for manual testing
+- Add placeholder scripts in automation directories
