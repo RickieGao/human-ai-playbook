@@ -35,6 +35,7 @@ Each fragment uses this structure:
 | `{{build_command}}` | Round 3, Q1 | "npm run build" |
 | `{{test_command}}` | Round 3, Q2 | "npm test" |
 | `{{lint_command}}` | Round 3, Q3 | "npm run lint" |
+| `{{coding_conventions}}` | Scan detection or Q4 context | "Use camelCase for variables, PascalCase for components" |
 | `{{workflow_description}}` | Q1 mapping | "Plan-first: discuss before coding" |
 | `{{autonomy_description}}` | Q2 mapping | "Moderate: suggest but don't act without approval" |
 | `{{communication_style_description}}` | Q3 mapping | "Concise: key points only" |
@@ -51,6 +52,7 @@ Each fragment uses this structure:
 | `{{build_command}}` | Scan detection | Tech recommendation (inferred) |
 | `{{test_command}}` | Scan detection | Tech recommendation (inferred) |
 | `{{lint_command}}` | Scan detection | Tech recommendation (inferred) |
+| `{{coding_conventions}}` | Scan detection (eslint/prettier config) | Tech recommendation defaults |
 | `{{known_pitfalls}}` | Q6 + scan supplement | Q6 |
 
 ## Rules

@@ -1,5 +1,8 @@
 ## Collaboration Mode
 
+### Workflow
+- {{workflow_description}}
+
 ### Communication Style
 - {{communication_style_description}}
 

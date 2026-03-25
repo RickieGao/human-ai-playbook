@@ -81,6 +81,17 @@ Autonomy is derived from the combination of Q1 (work rhythm) and Q2 (unexpected 
 └── High     → Add: "Work independently, present results at PR level. Fix related issues proactively and report what changed."
 ```
 
+## Communication Style (from Q3)
+
+```
+Q3: "After AI completes a task, how should it report?"
+├── Q3-a (detailed explanation)  → communication: verbose
+├── Q3-b (brief summary)        → communication: concise
+└── Q3-c (just code diff)       → communication: minimal
+```
+
+No template fragment selection needed — the value is injected directly via `{{communication_style_description}}` placeholder.
+
 ## Additional Preferences (Full Mode Q4-Q7)
 
 ### Testing (from Q4)
@@ -108,4 +119,4 @@ Direct insertion into respective CLAUDE.md sections. No template mapping needed.
 4. Context Management (base)
 5. Scale-specific guidelines
 6. Domain-specific guidelines (if applicable)
-7. Custom pitfalls and conventions (from Round 3)
+7. Custom pitfalls, safety constraints, and conventions (from scenario questions)
