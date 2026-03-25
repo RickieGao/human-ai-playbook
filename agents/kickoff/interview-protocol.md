@@ -20,14 +20,29 @@ Present the choice (except Path B zero-experience users who default to full mode
 
 ---
 
+## Scenario Adaptation
+
+Adapt question scenarios to the project type detected by the scanner:
+
+| Project Type | Q1 scenario | Q2 scenario |
+|-------------|-------------|-------------|
+| Application | "implement a user login feature" | "an existing function is poorly written" |
+| Documentation | "write a new methodology doc" | "an existing doc has inconsistent terminology" |
+| Docs + Automation | "add a new automation workflow" | "an existing script has a redundant step" |
+| Hybrid | Choose the scenario matching the project's primary activity | Same |
+
+Use project-appropriate language throughout (e.g., "writing" not "coding" for doc projects).
+
+---
+
 ## Quick Mode (3 Core Questions)
 
 ### Q1 — Work Rhythm
 
-> "You ask AI to implement a user login feature. How should AI work?
-> a) Write a plan first, wait for your approval before coding
-> b) Start coding, but show you after each small step
-> c) Complete the whole feature, you review the final result"
+> "You ask AI to [project-appropriate task]. How should AI work?
+> a) Write a plan first, wait for your approval before starting
+> b) Start working, but show you after each small step
+> c) Complete the whole task, you review the final result"
 
 **Maps to:**
 - a → workflow: plan-first, autonomy: strict
@@ -36,7 +51,7 @@ Present the choice (except Path B zero-experience users who default to full mode
 
 ### Q2 — Handling the Unexpected
 
-> "While implementing your feature, AI notices an existing function is poorly written
+> "While working on your task, AI notices [project-appropriate issue]
 > and fixing it would make things cleaner. What should AI do?
 > a) Only do what you asked, don't touch anything else
 > b) Tell you about the issue and ask if you want it fixed too
