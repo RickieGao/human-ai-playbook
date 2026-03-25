@@ -1,59 +1,55 @@
-# Kickoff Agent - Project Initialization Guide
+# Kickoff Agent - Your First Step from Idea to Project
 
-> Guides users through a structured interview to generate a CLAUDE.md
-> and initial project structure for human-AI collaboration.
+> The first AI you talk to when you have a creative idea. Guides you from a vague
+> notion to a clear plan, or helps configure an existing project for AI collaboration.
 
-## Overview
+## What It Does
 
-The Kickoff Agent conducts a 3-round interview, then assembles outputs:
+The Kickoff Agent is the entry point for starting any project with AI. It adapts
+to your situation:
+
+- **Have an existing project?** → Scans your codebase, detects your setup, asks a
+  few scenario questions about collaboration style, generates a customized CLAUDE.md
+- **Just have an idea?** → Helps you clarify requirements, researches existing solutions,
+  recommends technology, then sets up your CLAUDE.md
+
+The goal is not just to generate a config file — it's to help you make the right
+decision about what to build (or not build) and how to work with AI effectively.
+
+## Flow
 
 ```
-Round 1: Project Basics     -> What are you building?
-Round 2: Collaboration Prefs -> How do you want to work with AI?
-Round 3: Environment Setup   -> What tools and constraints?
-         |
-         v
-Output: CLAUDE.md + project structure suggestions + memory recommendations
+Detect Environment
+  ├── Existing project → Scan & confirm → Collaboration questions → CLAUDE.md
+  └── New idea → Clarify needs → Research market → Tech recommendation
+                                                          ↓
+                                         Collaboration questions → CLAUDE.md
+                                                          ↓
+                                              Staged review (section by section)
+                                                          ↓
+                                              Optional: scaffold project
 ```
 
-## How to Use
+## Protocols
 
-Invoke this agent at the start of a new project. It will ask you questions
-in 3 rounds and generate a customized CLAUDE.md based on your answers.
-
-### Round 1: Project Basics
-- Project name and description
-- Tech stack (language, framework, database, etc.)
-- Project type (greenfield, existing codebase, migration, etc.)
-- Team size (solo, small team, large team)
-- Primary goals and success criteria
-
-### Round 2: Collaboration Preferences
-- Preferred workflow (TDD, plan-first, spec-driven, incremental)
-- AI autonomy level (strict review, moderate, high autonomy)
-- Communication style (verbose, concise, minimal)
-- Code style preferences (formatting, naming conventions)
-- Review process (every change, per feature, per PR)
-
-### Round 3: Environment Configuration
-- Build and test commands
-- CI/CD setup
-- Special tools or constraints
-- Security requirements
-- Known pitfalls or gotchas
-
-## Output
-
-After the interview, the agent:
-1. Assembles a CLAUDE.md from template fragments (see `templates/`)
-2. Suggests initial project structure
-3. Recommends memory/tool configuration
-4. Provides a summary for human review before finalizing
+| Protocol | File | Purpose |
+|----------|------|---------|
+| Environment Detection | `environment-detection.md` | Determine Path A or B |
+| Project Scanner | `project-scanner.md` | Path A: auto-detect project config |
+| Needs Clarification | `needs-clarification.md` | Path B: brainstorm requirements |
+| Market Research | `market-research.md` | Path B: evaluate existing solutions |
+| Tech Recommendation | `tech-recommendation.md` | Path B: recommend tech stack |
+| Scenario Questions | `interview-protocol.md` | Both paths: collaboration preferences |
+| Decision Tree | `decision-tree.md` | Map answers to template selections |
+| Staged Review | `staged-review.md` | Section-by-section review with education |
+| Self-Update | `self-update.md` | Ongoing CLAUDE.md maintenance |
+| Assembly Rules | `templates/_assembly-rules.md` | How template fragments combine |
 
 ## Design Principles
 
-- Ask one round at a time; do not overwhelm
-- Provide defaults and examples for each question
-- Let the user skip questions (sensible defaults apply)
-- Always show the assembled result for human review before writing files
+- **Auto-detect what you can** — don't ask users for information that's in their code
+- **Scenario over abstraction** — use concrete situations, not abstract concepts
+- **Honest guidance** — recommend existing solutions when they fit; building isn't always the answer
+- **Ownership through understanding** — explain why each part matters, review section by section
+- **Living document** — CLAUDE.md evolves with the project via self-update mechanism
 - Follow the Meta Agent communication principles at all times
