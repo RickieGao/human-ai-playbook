@@ -39,6 +39,7 @@ A bilingual (Chinese/English) open-source project providing human-AI collaborati
 - Methodology docs: Clear, concise, actionable. Use tables for structured comparisons.
 - Agent protocols: Structured markdown with clear sections. Machine-readable where possible.
 - Bilingual: Chinese is primary. English translations should be natural, not literal.
+- Pipeline code: GitHub Actions workflows and automation scripts should be simple, well-commented, and easy to debug.
 
 ### Commit Convention
 - Use conventional commits: `feat:`, `fix:`, `docs:`, `chore:`
@@ -50,6 +51,7 @@ A bilingual (Chinese/English) open-source project providing human-AI collaborati
 ### Verification
 - Core content (agent protocols, methodology docs, templates) must be verified: cross-reference checks, self-test runs, consistency validation.
 - Supporting content (README updates, comments, minor formatting) can skip verification.
+- Pipeline code: Workflows and scripts must be tested via `workflow_dispatch` manual trigger before merging.
 
 ## Guardrails and Pitfalls
 
