@@ -7,7 +7,14 @@ and ownership by explaining each section's purpose before asking for confirmatio
 
 CLAUDE.md draft has been generated (Stage 3 complete).
 
-## Process
+## Mode Detection
+
+Check whether a CLAUDE.md already exists in the project root:
+
+- **No existing CLAUDE.md → First-time mode**: Full section-by-section review with explanations
+- **Existing CLAUDE.md → Update mode**: Diff-focused review (see below)
+
+## First-Time Mode Process
 
 Present CLAUDE.md in 4-5 sections. For each section:
 1. Show the content
@@ -15,6 +22,14 @@ Present CLAUDE.md in 4-5 sections. For each section:
 3. For Path B users: add a concrete example of how this affects collaboration
 4. Wait for user to confirm, modify, or add content
 5. Only proceed to next section after confirmation
+
+## Update Mode Process
+
+Compare generated CLAUDE.md against existing content. Then:
+1. List unchanged sections in one line: "Sections 1, 2, 5 unchanged — skipping."
+2. For each section with differences, show a diff and explain what changed and why
+3. Wait for user to confirm, modify, or reject each change
+4. Apply only confirmed changes; preserve existing content for rejected/unchanged sections
 
 ## Sections
 
