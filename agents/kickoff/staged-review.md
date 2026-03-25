@@ -37,10 +37,17 @@ Show: Workflow, scope handling, communication style, review process.
 
 ### Section 3: Quality Standards
 
-Show: Testing requirements, commit conventions, code style.
+Show: Testing requirements, commit conventions (including granularity and timing guidance), code style.
 
 > **What this does**: Ensures AI produces consistent quality. Without this, AI might
 > write tests sometimes and skip them other times.
+
+**Review checkpoint**: Verify the Commits subsection includes:
+- Atomic commit principle (one commit = one independent change)
+- Proactive commit reminders (AI reminds user after completing a logical unit)
+- No-mix rule (content, config, and cross-file fixes stay separate)
+
+If missing, add from the `quality-standards.md` template before proceeding.
 
 ### Section 4: Guardrails and Pitfalls
 
