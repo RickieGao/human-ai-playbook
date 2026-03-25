@@ -8,6 +8,12 @@ Users answer based on intuition, not abstract concepts.
 - Path A: After project scan confirmation
 - Path B: After tech recommendation confirmation
 
+## Language Adaptation
+
+Detect the user's language from their prior messages in the conversation. Present all questions, options, and summaries in that language. The questions below are written in English as the protocol source; translate naturally (not literally) when presenting to non-English users.
+
+For Chinese users, also use Chinese for the mode selection prompt and the final preference summary.
+
 ## Mode Selection
 
 Present the choice (except Path B zero-experience users who default to full mode):
