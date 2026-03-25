@@ -10,7 +10,7 @@ Each `.md` file in this directory is a **fragment** - a reusable section of a CL
 2. Add one `workflow/` fragment based on workflow choice
 3. Add one `scale/` fragment based on team size
 4. Add `domain/` fragment if applicable
-5. Inject custom content from Round 3 answers
+5. Inject custom content from scenario question answers
 6. Concatenate in the order defined in `decision-tree.md`
 7. Remove duplicate or contradictory instructions
 8. Present to user for review before writing
@@ -35,6 +35,23 @@ Each fragment uses this structure:
 | `{{build_command}}` | Round 3, Q1 | "npm run build" |
 | `{{test_command}}` | Round 3, Q2 | "npm test" |
 | `{{lint_command}}` | Round 3, Q3 | "npm run lint" |
+| `{{workflow_description}}` | Q1 mapping | "Plan-first: discuss before coding" |
+| `{{autonomy_description}}` | Q2 mapping | "Moderate: suggest but don't act without approval" |
+| `{{communication_style_description}}` | Q3 mapping | "Concise: key points only" |
+| `{{review_process_description}}` | Q5 mapping (full mode) or default | "Per feature" |
+| `{{safety_constraints}}` | Q7 (full mode) or empty | "Never delete production data" |
+
+## Data Source by Path
+
+| Content | Path A Source | Path B Source |
+|---------|--------------|---------------|
+| `{{project_name}}` | Scan detection | Requirements summary |
+| `{{project_description}}` | Scan detection | Requirements summary |
+| `{{tech_stack}}` | Scan detection | Tech recommendation |
+| `{{build_command}}` | Scan detection | Tech recommendation (inferred) |
+| `{{test_command}}` | Scan detection | Tech recommendation (inferred) |
+| `{{lint_command}}` | Scan detection | Tech recommendation (inferred) |
+| `{{known_pitfalls}}` | Q6 + scan supplement | Q6 |
 
 ## Rules
 

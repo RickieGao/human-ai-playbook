@@ -12,23 +12,37 @@ Every generated CLAUDE.md includes:
 - `base/quality-standards.md` - Testing and review standards
 - `base/context-management.md` - Context window and memory guidelines
 
-## Workflow Selection
+## Workflow Selection (from Q1 — Work Rhythm)
 
 ```
-Q: Which workflow?
-├── TDD          -> include workflow/tdd-workflow.md
-├── Plan-first   -> include workflow/plan-first-workflow.md
-├── Spec-driven  -> include workflow/spec-driven-workflow.md
-└── Incremental  -> include workflow/incremental-workflow.md
+Q1: "You ask AI to implement a user login feature. How should AI work?"
+├── a) Plan first, wait for approval    → include workflow/plan-first-workflow.md
+├── b) Code in small steps, show each   → include workflow/incremental-workflow.md
+└── c) Complete whole feature, review end → include workflow/incremental-workflow.md
+
+Note: If Q1-a AND Q4-a (full mode), consider TDD workflow instead:
+├── Q1-a + Q4-a (strict testing)  → include workflow/tdd-workflow.md
+└── Q1-a + Q4-b or Q4-c           → include workflow/plan-first-workflow.md
 ```
 
 ## Scale Selection
 
+Scale is determined differently by path:
+
+### Path A (existing project)
+Inferred from project scan:
 ```
-Q: Team size?
-├── Solo         -> include scale/solo-developer.md
-├── Small (2-5)  -> include scale/small-team.md
-└── Large / OSS  -> include scale/monorepo.md
+├── 1 contributor (last 30 days)     → include scale/solo-developer.md
+├── 2-5 contributors                 → include scale/small-team.md
+└── 5+ contributors or monorepo     → include scale/monorepo.md
+```
+
+### Path B (new project)
+Inferred from user context during needs clarification:
+```
+├── Solo / personal project          → include scale/solo-developer.md
+├── Small team (2-5)                 → include scale/small-team.md
+└── Large team / open source         → include scale/monorepo.md
 ```
 
 ## Domain Selection (future)
@@ -42,14 +56,49 @@ Q: Project domain?
 └── Other         -> no domain fragment
 ```
 
-## Autonomy Level Adjustments
+## Autonomy Level (from Q1 + Q2)
 
+Autonomy is derived from the combination of Q1 (work rhythm) and Q2 (unexpected handling):
+
+### Primary (from Q1)
 ```
-Q: AI autonomy?
-├── Strict   -> Add: "Always wait for confirmation before applying changes"
-├── Moderate -> Add: "Execute plan steps, pause at checkpoints for review"
-└── High     -> Add: "Work independently, present results at PR level"
+├── Q1-a (plan first)      → Base: strict
+├── Q1-b (small steps)     → Base: moderate
+└── Q1-c (complete feature) → Base: high
 ```
+
+### Modifier (from Q2)
+```
+├── Q2-a (only do asked)   → Confirm or tighten autonomy
+├── Q2-b (ask about extras) → Confirm moderate
+└── Q2-c (fix along the way) → Confirm or loosen autonomy
+```
+
+### Result
+```
+├── Strict   → Add: "Always wait for confirmation before applying changes. Do not modify files outside the explicit request."
+├── Moderate → Add: "Execute plan steps, pause at checkpoints for review. Report discovered issues but don't fix without approval."
+└── High     → Add: "Work independently, present results at PR level. Fix related issues proactively and report what changed."
+```
+
+## Additional Preferences (Full Mode Q4-Q7)
+
+### Testing (from Q4)
+```
+├── Q4-a (every feature tested)     → Add strict testing requirements to quality-standards
+├── Q4-b (core logic tested)        → Add moderate testing requirements
+└── Q4-c (tests later)              → Add minimal testing requirements
+```
+
+### Review Process (from Q5)
+```
+├── Q5-a (every file change)        → review: every-change
+├── Q5-b (per feature)              → review: per-feature
+└── Q5-c (PR level)                 → review: per-pr
+```
+
+### Known Pitfalls (Q6) and Safety Red Lines (Q7)
+Direct insertion into respective CLAUDE.md sections. No template mapping needed.
 
 ## Output Assembly Order
 

@@ -12,3 +12,8 @@
 
 ### Known Pitfalls
 {{known_pitfalls}}
+
+### Self-Update
+- AI may suggest CLAUDE.md updates when it detects changes in tools, conventions, or recurring corrections
+- Every suggested update will be shown as a diff with a reason — approve, reject, or modify
+- Rejected suggestions will not be repeated
