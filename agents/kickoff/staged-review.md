@@ -31,6 +31,27 @@ Compare generated CLAUDE.md against existing content. Then:
 3. Wait for user to confirm, modify, or reject each change
 4. Apply only confirmed changes; preserve existing content for rejected/unchanged sections
 
+### Handling custom sections
+
+Existing CLAUDE.md files may contain sections that don't match any template section (e.g., domain-specific rules, architecture diagrams, communication protocols). These are user-authored content with high value.
+
+Rules:
+- **Never remove or replace custom sections.** They represent domain knowledge that templates cannot generate.
+- When listing changes, explicitly acknowledge custom sections: "The following sections are unique to your project and will be preserved as-is: [list]."
+- If a custom section overlaps with a template section (e.g., project-specific testing rules vs. template Quality Standards), keep the custom version and skip the template default.
+- Custom sections retain their original position in the document.
+
+### Quality comparison principle
+
+When existing content is more specific or detailed than the template default, preserve the existing content. Templates provide a starting point; they should not dilute a well-crafted CLAUDE.md.
+
+Examples:
+- Existing: "单笔最大亏损：账户余额的1%" → better than template default "Add safety constraints here"
+- Existing: detailed architecture diagram → better than template's generic "Project description"
+- Existing: domain-specific testing process → better than template's generic "Run `{{test_command}}`"
+
+Only suggest template content when the existing CLAUDE.md is missing a section entirely.
+
 ## Sections
 
 ### Section 1: Project Identity
