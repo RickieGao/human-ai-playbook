@@ -20,10 +20,13 @@ decision about what to build (or not build) and how to work with AI effectively.
 
 ```
 Detect Environment
-  ├── Existing project → Scan & confirm → Collaboration questions → CLAUDE.md
+  ├── Existing project → Scan & confirm → Collaboration questions → Output strategy
   └── New idea → Clarify needs → Research market → Tech recommendation
                                                           ↓
-                                         Collaboration questions → CLAUDE.md
+                                         Collaboration questions → Output strategy
+                                                          ↓
+                                              ├── Solo → CLAUDE.md
+                                              └── Team/Monorepo → CLAUDE.md + .claude/rules/
                                                           ↓
                                               Staged review (section by section)
                                                           ↓
@@ -44,6 +47,7 @@ Detect Environment
 | Staged Review | `staged-review.md` | Section-by-section review with education |
 | Self-Update | `self-update.md` | Ongoing CLAUDE.md maintenance |
 | Assembly Rules | `templates/_assembly-rules.md` | How template fragments combine |
+| Rules Assembly | `templates/rules/_rules-assembly.md` | How rules fragments are structured |
 
 ## Design Principles
 

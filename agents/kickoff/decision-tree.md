@@ -120,3 +120,32 @@ Direct insertion into respective CLAUDE.md sections. No template mapping needed.
 5. Scale-specific guidelines
 6. Domain-specific guidelines (if applicable)
 7. Custom pitfalls, safety constraints, and conventions (from scenario questions)
+
+## Output Strategy Selection
+
+Output strategy is derived from scale selection:
+
+```
+Scale Selection Result
+├── solo-developer  → Output: CLAUDE.md only
+│                     All fragments assembled into single file
+├── small-team      → Output: CLAUDE.md + .claude/rules/
+│                     Extract: quality.md, commit.md, workflow.md
+│                     CLAUDE.md keeps: identity, collaboration, context, guardrails
+└── monorepo        → Output: CLAUDE.md + .claude/rules/ (with path scoping)
+                      Extract: quality.md, commit.md, workflow.md
+                      Generate: per-package rules from scan data (Path A) or tech recommendation (Path B)
+                      CLAUDE.md keeps: identity, collaboration, context, guardrails
+```
+
+### Path A monorepo detection
+
+When project scanner detects monorepo structure (multiple packages/modules with their own configs):
+- Generate one path-scoped rule per detected package with distinct conventions
+- Only create path-scoped rules when packages have meaningfully different conventions (e.g., different languages, different test frameworks)
+
+### Path B monorepo setup
+
+When user describes a monorepo in needs clarification:
+- Generate skeleton path-scoped rules based on planned package structure
+- Mark them with `TODO: refine after first sprint` comments

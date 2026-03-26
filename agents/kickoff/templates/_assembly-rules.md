@@ -13,7 +13,10 @@ Each `.md` file in this directory is a **fragment** - a reusable section of a CL
 5. Inject custom content from scenario question answers
 6. Concatenate in the order defined in `decision-tree.md`
 7. Remove duplicate or contradictory instructions
-8. Present to user for review before writing
+8. Determine output strategy based on scale selection (see Output Strategy section)
+9. Present to user for review before writing (including file structure preview for multi-file output)
+10. For single-file: write all content to CLAUDE.md
+11. For multi-file: extract designated fragments into `.claude/rules/` files, keep remaining content in CLAUDE.md
 
 ## Fragment Format
 
@@ -57,7 +60,43 @@ Each fragment uses this structure:
 
 ## Rules
 
-- Total assembled CLAUDE.md should be under 200 lines
+- Single-file output: total CLAUDE.md should be under 200 lines
+- Multi-file output: CLAUDE.md should be under 120 lines; each rules file under 50 lines
 - Fragments should be self-contained (no cross-references)
 - Use clear, imperative language (instructions for AI)
 - Do not include information AI can infer from code
+- Output strategy is determined by scale selection (see Output Strategy section)
+- For multi-file output, `base/quality-standards.md` content is distributed across `rules/quality.md` and `rules/commit.md` instead of being included in CLAUDE.md
+
+## Output Strategy
+
+The Kickoff Agent produces different file structures based on project scale:
+
+### Single-file (solo-developer scale)
+- Output: `CLAUDE.md` only
+- All content assembled into one file
+- Target: under 200 lines
+
+### Multi-file (small-team scale)
+- Output: `CLAUDE.md` + `.claude/rules/` directory
+- CLAUDE.md contains: Project Identity, Collaboration Mode, Context Management
+- Rules files contain: quality standards, workflow specifics
+- Each rules file should be self-contained and under 50 lines
+
+### Multi-file with path scoping (monorepo scale)
+- Output: `CLAUDE.md` + `.claude/rules/` directory with path-scoped rules
+- CLAUDE.md contains: Project Identity, Collaboration Mode, Context Management
+- Global rules (no path scope): quality standards, commit conventions
+- Path-scoped rules: per-package/module conventions, testing requirements
+- Path-scoped rules use YAML frontmatter:
+  ```yaml
+  ---
+  paths:
+    - "packages/api/**/*"
+  ---
+  ```
+
+### Strategy Selection
+- solo-developer → single-file
+- small-team → multi-file
+- monorepo → multi-file with path scoping

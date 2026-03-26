@@ -80,13 +80,44 @@ Show: CLAUDE.md maintenance rules, session management, self-update mechanism.
 
 > **What this does**: Keeps your CLAUDE.md alive and accurate as the project evolves.
 
+### Section 6: File Structure Preview (multi-file output only)
+
+Skip this section if output strategy is single-file.
+
+Show the planned file structure:
+
+```
+project-root/
+├── CLAUDE.md                    ← Core: identity, collaboration, guardrails
+└── .claude/
+    └── rules/
+        ├── quality.md           ← Testing and code style
+        ├── commit.md            ← Commit conventions
+        ├── workflow.md          ← Development workflow
+        └── api.md (monorepo)   ← Path-scoped: packages/api/**/*
+```
+
+> **What this does**: Instead of one large CLAUDE.md, your rules are split into
+> focused files. Path-scoped rules only load when AI reads matching files,
+> which saves context window space in large projects.
+
+Ask: "Does this file structure make sense? Would you like to merge any of these back into CLAUDE.md, or split differently?"
+
 ## After All Sections Confirmed
 
+### Single-file output
 Write CLAUDE.md to project root directory.
 
-> "CLAUDE.md has been written to your project root. This is a living document —
-> update it anytime as your project evolves. AI will also suggest updates when
-> it notices things have changed."
+### Multi-file output
+1. Write CLAUDE.md to project root (with a note pointing to `.claude/rules/`)
+2. Create `.claude/rules/` directory
+3. Write each rules file
+
+> "Your project configuration has been written:
+> - `CLAUDE.md` — core project identity and collaboration rules
+> - `.claude/rules/` — modular rules that load automatically
+>
+> These are living documents — update them as your project evolves."
 
 Then offer optional scaffold:
 

@@ -17,3 +17,8 @@
 - `self-update.md` 是独立协议，但触发规则没有进入生成的 CLAUDE.md 模板
 - `templates/base/context-management.md` 可能需要补充 self-update 触发信号
 - **建议**: 在 context-management 模板中加入基本的 self-update 规则
+
+### 4. Rules output 集成测试（中优先级）
+- 多文件输出策略已定义但未在真实项目中验证
+- 需要用 team-monorepo 场景做一次完整 dry-run
+- **建议**: 在下次有人使用 monorepo 项目运行 kickoff 时记录反馈
