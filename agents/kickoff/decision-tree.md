@@ -45,16 +45,29 @@ Inferred from user context during needs clarification:
 └── Large team / open source         → include scale/monorepo.md
 ```
 
-## Domain Selection (future)
+## Domain Selection
+
+Domain is inferred from tech stack detection (Path A) or tech recommendation (Path B).
+When detection is ambiguous, confirm with the user.
 
 ```
-Q: Project domain?
+Detected domain:
 ├── Web frontend  -> include domain/web-frontend.md (planned)
-├── Backend API   -> include domain/backend-api.md (planned)
+├── Backend API   -> include domain/backend-api.md
 ├── Mobile        -> include domain/mobile.md (planned)
-├── Data/ML       -> include domain/data-ml.md (planned)
-└── Other         -> no domain fragment
+├── Data/ML       -> include domain/data-ml.md
+└── Other / unclear → no domain fragment
 ```
+
+### Domain Detection Heuristics
+
+| Signal | Domain |
+|--------|--------|
+| Express, FastAPI, Django REST, Spring Boot, Gin, Rails API-mode | Backend API |
+| React, Vue, Angular, Svelte, Next.js (frontend focus) | Web frontend |
+| React Native, Flutter, Swift/Xcode, Kotlin/Android | Mobile |
+| pandas, numpy, scikit-learn, pytorch, tensorflow, jupyter notebooks | Data/ML |
+| Multiple signals or none dominant | Ask user |
 
 ## Autonomy Level (from Q1 + Q2)
 
