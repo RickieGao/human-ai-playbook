@@ -22,6 +22,12 @@
 {{safety_constraints}}
 
 ### Self-Update
-- AI may suggest CLAUDE.md updates when it detects changes in tools, conventions, or recurring corrections
+- AI may suggest CLAUDE.md updates when it detects these signals:
+  - New dependency or tool added to the project
+  - Same AI behavior corrected 3+ times → codify as a rule
+  - New pitfall discovered during work
+  - Commands in this file no longer work
+  - Major project structure change
 - Every suggested update will be shown as a diff with a reason — approve, reject, or modify
 - Rejected suggestions will not be repeated
+- Updates should be suggested at natural pauses (task completion), not mid-work
