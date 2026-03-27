@@ -1,12 +1,12 @@
 # Domain Templates
 
-> Planned for future versions.
+Domain-specific template fragments that add field-relevant rules to the generated CLAUDE.md.
 
-Domain-specific template fragments will be added here as the project evolves.
+Available domains:
+- [Backend API](backend-api.md) — REST API, service layer, data persistence
+- [Data/ML](data-ml.md) — data pipelines, notebooks, model management
 
-Planned domains:
+Planned domains (not yet implemented):
 - Web frontend
-- Backend API
 - Mobile
-- Data/ML
 - DevOps/Infrastructure
