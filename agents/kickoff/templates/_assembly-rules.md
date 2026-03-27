@@ -68,6 +68,33 @@ Each fragment uses this structure:
 - Output strategy is determined by scale selection (see Output Strategy section)
 - For multi-file output, `base/quality-standards.md` content is distributed across `rules/quality.md` and `rules/commit.md` instead of being included in CLAUDE.md
 
+## Placeholder Fallback
+
+When a placeholder value cannot be detected (Path A) or inferred (Path B), apply these fallbacks:
+
+| Placeholder | Fallback |
+|-------------|----------|
+| `{{project_name}}` | Use directory name |
+| `{{project_description}}` | `TODO: Add project description` |
+| `{{tech_stack}}` | Must be resolved — ask user if scan fails |
+| `{{build_command}}` | Omit the Build section from Commands |
+| `{{test_command}}` | Omit the Test section from Commands; add to Known Pitfalls: "No test command detected — set up testing and update this file" |
+| `{{lint_command}}` | Omit the Lint section from Commands |
+| `{{coding_conventions}}` | "Follow existing code style in the repository" |
+| `{{workflow_description}}` | Must be resolved — always comes from interview |
+| `{{autonomy_description}}` | Must be resolved — always comes from interview |
+| `{{communication_style_description}}` | Must be resolved — always comes from interview |
+| `{{review_process_description}}` | "Per feature" (default) |
+| `{{safety_constraints}}` | Omit the Safety Constraints section |
+| `{{known_pitfalls}}` | Omit the Known Pitfalls section |
+
+### Fallback Principles
+
+1. **Never output raw placeholders** — `{{test_command}}` must never appear in the final CLAUDE.md
+2. **Omit over stub** — if a value is unknown and non-critical, remove the section rather than inserting a generic placeholder
+3. **Mark for follow-up** — when omitting something important (like tests), add a note in Known Pitfalls so the user is reminded to set it up
+4. **Must-resolve placeholders** — `tech_stack`, `workflow_description`, `autonomy_description`, and `communication_style_description` must always be resolved (ask the user if detection fails)
+
 ## Output Strategy
 
 The Kickoff Agent produces different file structures based on project scale:
