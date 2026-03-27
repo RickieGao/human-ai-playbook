@@ -60,10 +60,33 @@
 
 ---
 
+## Dry-Run: Domain Template + Multi-File Output (2026-03-26)
+
+**Scenario**: Team monorepo (Go backend + React frontend), Backend API domain detected
+
+**Verified**:
+- [x] Backend API domain template (`domain/backend-api.md`) created and follows fragment format
+- [x] Data/ML domain template (`domain/data-ml.md`) created and follows fragment format
+- [x] Decision tree updated with domain detection heuristics
+- [x] Domain content merges correctly with path-scoped rules (same scope = merge, not separate file)
+- [x] Placeholder fallback rules prevent raw `{{placeholder}}` in output
+- [x] Self-update triggers embedded in context-management template
+- [x] Team-monorepo example updated to show domain integration
+- [x] All template fragments remain under 50 lines
+- [x] Example CLAUDE.md stays under 120 lines (multi-file mode)
+
+**Notes**:
+- Domain template content naturally merges with path-scoped rules — no need for a separate domain rules file when the scope overlaps
+- Fallback rules cover all 13 defined placeholders with clear resolution strategy
+- Web frontend and Mobile domain templates remain planned — to be created when usage demands
+
+---
+
 ## 总结
 
-3 次自测覆盖了：
+3 次自测 + 1 次 dry-run 覆盖了：
 - Path A 更新场景 x2（Docs+Automation, Application）
 - Path B 首次创建场景 x1（Research/Data）
+- Domain + Multi-file 集成验证 x1（Team Monorepo）
 - 共发现 6 个问题，全部已修复
 - ROADMAP 要求的"Self-test 3+ times"已达标

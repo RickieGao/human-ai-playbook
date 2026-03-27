@@ -173,3 +173,15 @@ paths:
 - All components must have snapshot tests
 - CSS modules only — no inline styles in production code
 ```
+
+---
+
+## Note: Domain Template Integration
+
+In this example, the Backend API domain was detected from Go + REST patterns in `packages/api/`.
+The domain template rules (`backend-api.md`) were merged into the path-scoped `api.md` rules file
+rather than creating a separate file, because they apply to the same path scope.
+
+The `api.md` file above already reflects domain-informed rules (input validation, error handling,
+prepared statements). In practice, the Kickoff Agent merges domain template content with
+path-scoped rules when they overlap in scope.
