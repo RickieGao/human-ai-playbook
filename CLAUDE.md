@@ -2,22 +2,22 @@
 
 ## Project Identity
 
-A bilingual (Chinese/English) open-source project providing human-AI collaboration methodology and executable agent systems.
+A bilingual (Chinese/English) open-source tool for building personal AI collaboration harnesses. Helps users deploy a complete harness (CLAUDE.md, settings, hooks, commands, MCP config) to any new project with a single command.
 
-- **Primary language**: Chinese for docs, English for code and agent protocols
+- **Primary language**: Chinese for docs, English for code and skill protocols
 - **License**: CC-BY-SA-4.0
-- **Current phase**: Phase 2 — Kickoff Agent complete, evolution pipeline planned
+- **Current phase**: Phase 1 restructure — repositioning from methodology docs to harness building tool
 
 ## Repository Structure
 
-- `docs/zh/` - 方法论文档 (Chinese, primary)
-- `docs/en/` - Methodology docs (English)
-- `docs/superpowers/` - Plans and specs for superpowers skills
-- `agents/` - Agent system (meta/, kickoff/, async-comm/, retrospective/, persona-transfer/)
-- `evolution/` - Self-evolution pipeline (collector/, analyzer/, updater/)
-- `research/` - Research materials and competitive analysis
-- `.github/workflows/` - CI/CD automation (weekly collect & analyze)
-- `.claude/` - Claude Code integration (commands, settings)
+- `guide/zh/` - 极简人类指南 (Chinese, primary) — 3 docs max
+- `guide/en/` - Minimal guide (English)
+- `skills/` - Skill protocol library (meta/, kickoff/, async-comm/, retrospective/, persona-transfer/)
+- `evolution/` - Three-channel evolution pipeline (periodic/, knowledge-intake/, feedback/)
+- `research/` - Research materials, competitive analysis, archived methodology docs
+- `.github/workflows/` - CI/CD automation
+- `.claude/skills/` - Claude Code skill entry points (official format)
+- `docs/` - Project process documents (PROGRESS.md, TODO.md)
 
 ## Collaboration Mode
 
@@ -36,8 +36,8 @@ A bilingual (Chinese/English) open-source project providing human-AI collaborati
 ## Quality Standards
 
 ### Writing Style
-- Methodology docs: Clear, concise, actionable. Use tables for structured comparisons.
-- Agent protocols: Structured markdown with clear sections. Machine-readable where possible.
+- Guide docs: Minimal. Each doc ≤80 lines. If it can be done by AI, don't document it for humans.
+- Skill protocols: Structured markdown with clear sections. Machine-readable where possible.
 - Bilingual: Chinese is primary. English translations should be natural, not literal.
 - Pipeline code: GitHub Actions workflows and automation scripts should be simple, well-commented, and easy to debug.
 
@@ -56,9 +56,9 @@ A bilingual (Chinese/English) open-source project providing human-AI collaborati
 ## Guardrails and Pitfalls
 
 ### Key Decisions
-- Meta Agent defines communication principles that all other agents must follow
-- Kickoff Agent is the MVP priority — it generates CLAUDE.md for other projects
-- Self-evolution uses a 4-step pipeline: collect → analyze → suggest updates → human review
+- Meta skill defines communication principles that all other skills must follow
+- Kickoff skill is the core — it deploys a complete harness (not just CLAUDE.md) using a two-layer merge: personal profile + project-specific config
+- Evolution uses 3 channels: periodic automated / ad-hoc knowledge intake / usage feedback
 
 ### Safety Red Lines
 - Do NOT modify environment variables or environment configuration
