@@ -12,15 +12,15 @@
 - [x] 更新 `~/.claude/CLAUDE.md` — 新增过程文档更新偏好
 
 ### Phase 1：结构重组
-- [ ] `agents/` → `skills/`（git mv）
-- [ ] `docs/zh/*.md` → `research/archive/methodology-v1/`（归档）
-- [ ] `docs/superpowers/` → `research/superpowers/`
-- [ ] 创建 `guide/zh/`（新精简内容）
-- [ ] kickoff 内部子目录重组（detection/ interview/ output/ new-idea/）
-- [ ] 创建 `.claude/skills/` 官方格式入口（迁移自 `.claude/commands/`）
-- [ ] 重写 `skills/_skill-design-guide.md` — 对齐官方规范
-- [ ] 更新所有交叉引用（CLAUDE.md、README）
-- [ ] 验证：`/kickoff` 在新路径下正常工作
+- [x] `agents/` → `skills/`（git mv）
+- [x] `docs/zh/*.md` → `research/archive/methodology-v1/`（归档）
+- [x] `docs/superpowers/` → `research/superpowers/`
+- [x] 创建 `guide/zh/`（新精简内容）
+- [x] kickoff 内部子目录重组（detection/ interview/ output/ new-idea/）
+- [x] 创建 `.claude/skills/` 官方格式入口（迁移自 `.claude/commands/`）
+- [x] 重写 `skills/_skill-design-guide.md` — 对齐官方规范
+- [x] 更新所有交叉引用（CLAUDE.md）
+- [ ] 验证：`/kickoff` 在新路径下正常工作（需人工测试）
 
 ### Phase 2：个人 Profile 体系
 - [ ] 创建 `skills/kickoff/profile/schema.md`
